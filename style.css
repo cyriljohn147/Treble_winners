@@ -9,8 +9,6 @@ body
 {
   background-image: url("./pics/layered-waves-haikei.svg");
   background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center center;
   background-attachment: fixed;
 }
 
@@ -55,67 +53,106 @@ body
   height: 100vh;
   border: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows:  1fr 1fr;
-  font-weight: bold;
-  font-family: 'Abril Fatface'
-}
-
-.team
-{
-  font-size: 8em;
   display: flex;
   justify-content: center;
-  align-items: end;
-  animation: animate1 2s ease-out;
+  align-items: center;
+}
+
+
+
+.dynamic_title
+{
+  margin-left: 5px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.dynamic_title li
+{
+  background-color: #6CA1CC;
+  list-style: none;
+  font-size: 5em;
+  border-bottom: #6CA1CC solid 20px;
+  position: relative;
+  top: 0;
+  animation: slide 3s steps(2) infinite;
   
 }
 
-.treble
+@keyframes slide
 {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  font-size: 2em;
-  animation: animate1 2.5s ease-out ;
-}
-
-@keyframes animate1
-{
-  from
+  100%
   {
-    transform: translateY(100%);
-  }
-
-  to
-  {
-    transform: translate((0%));
+    top: -280px;
   }
 }
 
-@keyframes animate2
+.dynamic_title>.team
 {
-  from
-  {
-    transform: translateY(-100%);
-  }
+  padding-left: 30%;
+}
 
-  to
+.dynamic_title li span
+{
+  justify-self: center;
+  position: relative;
+
+}
+
+.dynamic_title li span::after
+{
+  content:"";
+  position: absolute;
+  left: 0;
+  height: 90%;
+  width: 100%;
+  background-color: #6CA1CC;
+  border-left: 2px solid #ffffff;
+  animation: typing 1.5s steps(21) infinite;
+}
+
+@keyframes typing
+{
+  100%
   {
-    transform: translate((0%));
+    left: 100%;
+    width: 0%;
   }
 }
 
 @media only screen and (max-width: 1020px)
 {
-  .team
+  @keyframes slide
   {
-    font-size: 3.5em;
+    100%
+    {
+      top: -100px;
+    }
   }
 
-  .treble
+
+  .dynamic_title
   {
+    margin-left: 5%;
+    padding-left: 10px;
+    height: 55px;
+    overflow: hidden;
+  }
+
+  body {
+    background-size: auto;
+    background-size: cover; 
+    background-attachment: fixed;
+  }
+
+  .dynamic_title  .team
+  {
+    font-size: 1.5em;
+  }
+
+  .dynamic_title .year
+  {
+    padding-left: 15%;
     font-size: 1em;
   }
 
@@ -129,6 +166,11 @@ body
   {
     display: flex;  
     flex-wrap: wrap;
+  }
+
+  .comp
+  {
+    font-size: 1.4em;
   }
   
 }
@@ -145,7 +187,7 @@ body
 .comp
 {
   width: 100%;
-  font-size: 3em;
+  font-size: 2.5em;
   display: flex;
   justify-content: center;
   font-family: 'Abril Fatface', cursive;
