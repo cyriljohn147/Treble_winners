@@ -76,6 +76,7 @@ ul
 {
   height: 120px;
   overflow: hidden;
+  padding-left: 0;
 }
 
 li
