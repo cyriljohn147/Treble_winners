@@ -47,6 +47,21 @@ body
   border-radius: 100%;
 }
 
+.title
+{
+  height: 100vh;
+  border: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+}
+
+ul
+{
+  list-style: none;
+}
 
 .title
 {
@@ -58,72 +73,45 @@ body
   align-items: center;
 }
 
-
-
 .dynamic_title
 {
-  margin-left: 5px;
   height: 120px;
   overflow: hidden;
 }
 
-.dynamic_title li
+li
 {
-  background-color: #6CA1CC;
-  list-style: none;
-  font-size: 5em;
-  border-bottom: #6CA1CC solid 20px;
+  display: flex;
+  justify-content: center;
+}
+
+span
+{
+  opacity: 0%;
+}
+
+.display
+{
+    opacity: 100%;
+}
+
+.team,.year
+{
   position: relative;
-  top: 0;
-  animation: slide 3s steps(2) infinite;
-  
+  top: 0px;
 }
 
-@keyframes slide
+.push
 {
-  100%
-  {
-    top: -280px;
-  }
-}
-
-.dynamic_title .team
-{
-  padding-left: 30%;
-}
-
-.dynamic_title li span
-{
-  justify-self: center;
-  position: relative;
-}
-
-.dynamic_title li span::after
-{
-  content:"";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #6CA1CC;
-  border-left: 2px solid #ffffff;
-  animation: typing 1.5s steps(21) infinite;
-}
-
-@keyframes typing
-{
-  100%
-  {
-    left: 100%;
-    width: 0%;
-  }
+    top: -110px;
 }
 
 @media only screen and (max-width: 1020px)
 {
   .head
   {
-    padding: 0px;
+    padding-top: 8px;
+    padding-left: 1px;
   }
 
   .dynamic_title
@@ -138,20 +126,10 @@ body
 
   }
 
-  .dynamic_title li
+  .title
   {
-    background-color: transparent;
-    animation: none;
-
+    font-size: 1.5em;
   }
-
-  .dynamic_title li span::after
-  {
-    border: 0px;
-    background-color: transparent;
-    animation: none
-  }
-
 
   .dynamic_title .team, .dynamic_title .year
   {
@@ -190,6 +168,7 @@ body
   .trophy
   {
     width: 100%;
+    margin-top: 10px;
   }
 
   .competitions
@@ -232,6 +211,7 @@ body
 {
   transform: scale(110%);
 }
+
 
 .competitions
 {
