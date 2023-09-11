@@ -17,7 +17,7 @@ for(var i=0;i<100;i++)
 {
     typing(team,".team");
     typing(year,".year");
-}z
+}
 
 setTimeout(function() {
     $("span").addClass("display");
